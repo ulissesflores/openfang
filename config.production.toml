@@ -1,0 +1,21 @@
+# Exposes the API and Web Dashboard to Coolify reverse proxy
+api_listen = "0.0.0.0:4200"
+
+# Security key to protect the Web Dashboard and REST API
+api_key = "MUDE_PARA_UMA_SENHA_MUITO_FORTE_NO_COOLIFY"
+
+# Internal container data directory
+data_dir = "/root/.openfang/data"
+
+[default_model]
+provider = "openrouter"
+# openrouter/auto delegates to the best cost-benefit model by default.
+# You can replace this with a full model ID from OpenRouter catalog.
+model = "openrouter/auto"
+api_key_env = "OPENROUTER_API_KEY"
+
+[channels.telegram]
+bot_token_env = "TELEGRAM_BOT_TOKEN"
+# Fill with numeric Telegram user IDs only (i64), without quotes, for safety.
+# Example: [123456789]
+allowed_users = []

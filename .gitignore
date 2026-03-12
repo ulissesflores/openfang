@@ -17,6 +17,12 @@
 
 # User config (may contain API keys)
 config.toml
+config.local.toml
+config.dev.toml
+config.development.toml
+config.*.local.toml
+config.secrets.toml
+!config.production.toml
 
 # Certificates & keys
 *.pem
