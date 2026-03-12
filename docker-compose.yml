@@ -7,8 +7,8 @@ services:
   openfang:
     build: .
     # image: ghcr.io/rightnow-ai/openfang:latest  # Uncomment when GHCR is public
-    #ports:
-    #  - "4200:4200"
+    ports:
+      - "4200:4200"
     volumes:
       - openfang-data:/data
     environment:
@@ -19,9 +19,6 @@ services:
       - DISCORD_BOT_TOKEN=${DISCORD_BOT_TOKEN:-}
       - SLACK_BOT_TOKEN=${SLACK_BOT_TOKEN:-}
       - SLACK_APP_TOKEN=${SLACK_APP_TOKEN:-}
-      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY:-}
-      - OPENFANG_LISTEN=${OPENFANG_LISTEN:-}
-      - OPENFANG_API_KEY=${OPENFANG_API_KEY:-}
     restart: unless-stopped
 
 volumes:
